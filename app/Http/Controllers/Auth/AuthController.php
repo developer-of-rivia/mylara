@@ -33,7 +33,7 @@ class AuthController extends Controller
             $request->session()->put(['auth' => true]);
             return redirect('admin/');
         } else {
-            return redirect('login/');
+            return redirect('login?formbad=true');
         }
     }
 

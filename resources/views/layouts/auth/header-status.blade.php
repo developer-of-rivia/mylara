@@ -1,5 +1,4 @@
 <div class="flex">
-
     @session('auth')
         <div class="card">
             <div class="card-header text-center">
@@ -7,7 +6,7 @@
             </div>
             <form method="POST" action="login/logout">
                 @csrf
-                <button class="btn btn-warning">Выйти</button>
+                <button class="btn btn-warning block">Выйти</button>
             </form>
         </div>
     @endsession

@@ -9,6 +9,17 @@
     <title>
         @yield('page_title')
     </title>
+    <style>
+        .bad-message{
+            display: none;
+        }
+        .form_bad .bad-message{
+            display: block;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            color: tomato;
+        }
+    </style>
 </head>
 <body>
 

@@ -17,7 +17,7 @@
             <h2 class="mt-4">
                 Авторизация
             </h2>
-            <form method="POST" action="login/auth">
+            <form method="POST" action="login/auth" class="@if(request()->query('formbad') == true) form_bad @endif">
                 @csrf
                 <div class="mb-3">
                   <label for="exampleInputlogin1" class="form-label">Логин</label>
@@ -27,6 +27,9 @@
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Пароль</label>
                   <input type="text" class="form-control" id="exampleInputPassword1" name="password">
+                </div>
+                <div class="bad-message">
+                    Неверные логин или пароль
                 </div>
                 <button type="submit" class="btn btn-primary">Войти</button>
             </form>
