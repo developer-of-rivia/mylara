@@ -28,9 +28,18 @@ class AuthController extends Controller
          * Поиск в базе данных совпадения логина и пароль и кладём коллекцию в переменную $user
          */
         $user = User::where('login', $request->login)->where('password', $request->password)->get();
+        
+
+        $user_id;
+        foreach($user as $user_item){
+            $user_id = $user_item->id;
+        }
+
 
         if($user->isNotEmpty()){
             $request->session()->put(['auth' => true]);
+            $request->session()->put(['your-id' => $user_id]);
+
             return redirect('admin/');
         } else {
             return redirect('login?formbad=true');

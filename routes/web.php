@@ -28,4 +28,4 @@ Route::post('/login/logout', [AuthController::class, 'logout']);
 
 
 /* admin */
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index'])->name('da');
