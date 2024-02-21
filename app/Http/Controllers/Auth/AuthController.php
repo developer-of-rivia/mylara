@@ -22,6 +22,8 @@ class AuthController extends Controller
         }
     }
 
+
+    
     // авторизация
     public function auth(Request $request){
         /**
@@ -31,20 +33,30 @@ class AuthController extends Controller
         
 
         $user_id;
-        foreach($user as $user_item){
-            $user_id = $user_item->id;
-        }
-
-
         if($user->isNotEmpty()){
-            $request->session()->put(['auth' => true]);
+            /**
+             * Получаем id нашедшегося в бд пользователя и кладём его в сессию
+             */
+            foreach($user as $user_item){
+                $user_id = $user_item->id;
+            }
             $request->session()->put(['your-id' => $user_id]);
 
-            return redirect('admin/');
+            /**
+             * Кладём в сессию значение, которое говорит о том, что пользователь авторизован
+             */
+            $request->session()->put(['auth' => true]);
+
+            /**
+             * Отправляем его к админ контроллеру
+             */
+            return redirect()->route('admin-page');
         } else {
             return redirect('login?formbad=true');
         }
     }
+
+
 
     // выход из аккаунта
     public function logout(Request $request){
