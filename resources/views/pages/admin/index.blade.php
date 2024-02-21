@@ -14,7 +14,7 @@
     
     <div class="admin">
         <div class="container">
-            
+            {{ $user_data['Main-hero'] }}
         </div>
     </div>
 

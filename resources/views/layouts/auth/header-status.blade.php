@@ -2,7 +2,7 @@
     @session('auth')
         <div class="card">
             <div class="card-header text-center">
-                Name
+                {{ $user_data['Name'] }}
             </div>
             <form method="POST" action="login/logout">
                 @csrf

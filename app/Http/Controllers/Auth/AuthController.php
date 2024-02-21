@@ -16,7 +16,7 @@ class AuthController extends Controller
          * Если пользователь в массиве сессии имеет переменную auth = true, то чела перекидывает на страницу админки
          */
         if($request->session()->get('auth') == true){
-            return redirect('admin/');
+            return redirect()->route('admin-page');
         } else{
             return view('pages/auth/login-page');
         }
