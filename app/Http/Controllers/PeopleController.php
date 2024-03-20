@@ -22,10 +22,10 @@ class PeopleController extends Controller
 
         // все те, с кем дружит данный пользователь
         $weFriends = Useruser::where('friendship_status', 'friend')
-                            ->where(function ($query) {
-                                $query->where('user', session()->get('user-id'))
-                                    ->orWhere('friend', session()->get('user-id'));
-                                    })->get();
+                        ->where(function ($query) {
+                            $query->where('user', session()->get('user-id'))
+                                ->orWhere('friend', session()->get('user-id'));
+                                })->get();
 
 
         // все люди

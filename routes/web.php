@@ -48,3 +48,6 @@ Route::get('/people', [PeopleController::class, 'index'])->name('people');
 /* frineds */
 Route::get('/friends', [FriendsController::class, 'index']);
 Route::get('/friends/add/{param}', [FriendsController::class, 'friendshipRequest']);
+Route::get('/friends/cancel/{param}', [FriendsController::class, 'cancelRequest']);
+Route::get('/friends/accept/{param}', [FriendsController::class, 'acceptRequest']);
+Route::get('/friends/breakup/{param}', [FriendsController::class, 'breakUp']);

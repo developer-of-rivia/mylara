@@ -33,11 +33,11 @@
                             <td style="text-align:right">
 
                               @if($user['relationships'] == 'wish-friend')
-                                <a class="btn btn-warning" href="friends/add/{{$user['id']}}">Отписаться</a>
+                                <a class="btn btn-warning" href="friends/cancel/{{$user['id']}}">Отписаться</a>
                               @elseif($user['relationships'] == 'my-sub')
-                                <a class="btn btn-success" href="friends/add/{{$user['id']}}">Принять заявку</a>
+                                <a class="btn btn-success" href="friends/accept/{{$user['id']}}">Принять заявку</a>
                               @elseif($user['relationships'] == 'friend')
-                                <a class="btn btn-danger" href="friends/add/{{$user['id']}}">Перестать дружить</a>
+                                <a class="btn btn-danger" href="friends/breakup/{{$user['id']}}">Перестать дружить</a>
                               @else
                                 <a href="friends/add/{{$user['id']}}">Добавить в друзья</a>
                               @endif
