@@ -48,7 +48,7 @@
                           <h5 class="card-title">Друзья</h5>
                           <p class="card-text">Посмотрите ваших друзей</p>
                           <div class="d-flex justify-content-between align-items-center">
-                            <a href="#" class="btn btn-primary">Посмотреть</a>
+                            <a href="/friends" class="btn btn-primary">Посмотреть</a>
                             <a href="/people" class="">Найти друзей</a>
                           </div>
                         </div>

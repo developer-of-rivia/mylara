@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\useruser;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,18 @@ class FriendsController extends Controller
         $this->uri_param = $uri_param;
     }
 
+
+    public function index()
+    {
+        // id тех, кто дружит с данным пользователем
+        $friendships = Useruser::where('friendship_status', 'friend')
+                        ->where(function ($query) {
+                            $query->where('user', session()->get('user-id'))
+                                ->orWhere('friend', session()->get('user-id'));
+                                })->get();
+
+        return view('friends/friends', ['friendships' => $friendships]);
+    }
 
     // отправить запрос на дружбу
     public function friendshipRequest()

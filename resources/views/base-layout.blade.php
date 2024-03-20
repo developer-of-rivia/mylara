@@ -24,16 +24,25 @@
 <body>
 
 
-    <nav class="navbar bg-light">
-        <div class="container">
-            <a class="navbar-brand">Navbar</a>
-            
-            @include('header-status')
-
-        </div>
-    </nav>
-
-
-    @yield('specific_content')
+    <header>
+        <nav class="navbar bg-light">
+            <div class="container">
+                <a class="navbar-brand">Navbar</a>
+                @include('header-status')
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="row">
+            <aside class="col-3 py-5">
+                <a href="/friends" class="btn d-block">Мои Друзья</a>
+                <a href="/people" class="mt-2 d-block btn btn-primary">Найти друзей</a>
+                <a href="/people" class="mt-2 d-block btn">Настройки аккаунта</a>
+            </aside>
+            <main class="col-9">
+                @yield('specific_content')
+            </main>
+        </section>
+    </div>
 </body>
 </html>
