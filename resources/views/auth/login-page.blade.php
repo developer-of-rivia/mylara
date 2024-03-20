@@ -3,7 +3,7 @@
     $page_is = 'Login page';
 @endphp
 {{-- Extends --}}
-@extends('layouts/base')
+@extends('base-layout')
 
 
 @section('page_title', 'Страница авторизации')

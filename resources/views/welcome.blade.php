@@ -3,7 +3,7 @@
     $page_is = 'Welcome';
 @endphp
 {{-- Extends --}}
-@extends('layouts/base')
+@extends('base-layout')
 
 
 @section('page_title', 'Главная страница welcome')

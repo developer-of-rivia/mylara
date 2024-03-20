@@ -28,7 +28,7 @@
         <div class="container">
             <a class="navbar-brand">Navbar</a>
             
-            @include('layouts/auth/header-status')
+            @include('header-status')
 
         </div>
     </nav>

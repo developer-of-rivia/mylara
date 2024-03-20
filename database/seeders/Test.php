@@ -15,11 +15,11 @@ class Test extends Seeder
      */
     public function run(): void
     {
-        DB::table('heroes')->insert([
-            'nickname' => Str::random(10),
-            'world' => Str::random(10).'@mkexample.com',
-            'status' => Str::random(10),
-            'description' => Str::random(10),
-        ]);
+        // DB::table('heroes')->insert([
+        //     'nickname' => Str::random(10),
+        //     'world' => Str::random(10).'@mkexample.com',
+        //     'status' => Str::random(10),
+        //     'description' => Str::random(10),
+        // ]);
     }
 }
